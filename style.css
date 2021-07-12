@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+}
+
+body {
+    /* font-size: 62.5%; */
+    font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+    width: 100%;
+    background-color: cyan;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 4rem);
+    grid-template-areas: "name" "row1" "row2";
+    justify-items: center;
+    align-items: center;
+}
+
+.row1 {
+    grid-area: row1;
+}
+
+.row2 {
+    grid-area: row2;
+}
+
+h1 {
+    grid-area: name;
+}
+
+.newarray {
+    grid-area: newarray;
+}
+
+.reset {
+    grid-area: reset;
+}
+
+.sort {
+    grid-area: sort;
+}
+
+.merge {
+    grid-area: merge;
+}
+
+.bubble {
+    grid-area: bubble;
+}
+
+.quick {
+    grid-area: quick;
+}
+
+button {
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 0.6rem 1.3rem;
+    color: white;
+    margin: 0.5rem;
+    background: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+    color: rgb(83, 176, 204);
+    border: 1.5px solid rgb(83, 176, 204);
+}
+
+@media (max-width: 400px) {
+    html {
+        width: 400px;
+    }
+}
