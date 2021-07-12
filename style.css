@@ -10,6 +10,8 @@ html {
 
 body {
     font-family: "Courier New", Courier, monospace;
+    /* disabling horizontal scroll */
+    overflow-x: hidden;
 }
 
 .container {
@@ -42,36 +44,47 @@ label {
 .algo-row {
     grid-area: algo-row;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.barsContainer {
+    margin-top: 20px;
+    display: flex;
     justify-content: center;
+}
+
+.barsContainer > div {
+    background-color: khaki;
+    margin: 1px;
+}
+
+.microBar {
+    width: 45px;
+}
+
+.barsContainer p {
+    padding: 8px;
+    text-align: center;
+}
+
+.smallBar {
+    width: 25px;
+}
+
+.mediumBar {
+    width: 15px;
+}
+
+.largeBar {
+    width: 10px;
+}
+
+.size {
+    margin-right: 60px !important;
 }
 
 h1 {
     grid-area: name;
-}
-
-.newarray {
-    grid-area: newarray;
-}
-
-.reset {
-    grid-area: reset;
-}
-
-.sort {
-    grid-area: sort;
-}
-
-.merge {
-    grid-area: merge;
-}
-
-.bubble {
-    grid-area: bubble;
-}
-
-.quick {
-    grid-area: quick;
 }
 
 button {
