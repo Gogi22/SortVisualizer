@@ -1,21 +1,40 @@
-const reset = document.querySelector(".reset")
-const newarray = document.querySelector(".newarray")
-const bars = document.querySelector(".barsContainer")
+const reset = document.querySelector('.reset')
+const newarray = document.querySelector('.newarray')
+const bars = document.querySelector('.barsContainer')
 
-const size = document.querySelector(".size")
-const speed = document.querySelector(".speed")
+const size = document.querySelector('.size')
+const speed = document.querySelector('.speed')
 
-const merge = document.querySelector(".merge")
-const bubble = document.querySelector(".bubble")
-const quick = document.querySelector(".quick")
-const insertion = document.querySelector(".insertion")
-const selection = document.querySelector(".selection")
+const merge = document.querySelector('.merge')
+const bubble = document.querySelector('.bubble')
+const quick = document.querySelector('.quick')
+const insertion = document.querySelector('.insertion')
+const selection = document.querySelector('.selection')
+
+const barArray = bars.childNodes;
+
+reset.style.pointerEvents = "none";
 
 let arraySize = size.value
 let array = []
+let delay = 200
+
+speed.addEventListener('input', ()=>{
+    // reverse the value
+    delay = 501 - parseInt(speed.value)
+})
 
 size.addEventListener('input', () =>{
     generateArray(parseInt(size.value))
+})
+
+newarray.addEventListener('click', () =>{
+    generateArray(parseInt(size.value))
+})
+
+halt=false
+reset.addEventListener('click', () => {
+    halt = true
 })
 
 const generateArray = (size=50) => {
@@ -49,6 +68,28 @@ const generateArray = (size=50) => {
         bars.appendChild(bar)
     }
     
+}
+
+const swap = (bar1, bar2) => {
+    [bar1.style.height, bar2.style.height] = [bar2.style.height, bar1.style.height];
+}
+
+const disableButtons = show => {
+    if(show){
+       s = "none"
+       reset.style.pointerEvents = "auto"
+    }
+    else{
+        s = "auto"
+        reset.style.pointerEvents = "none"
+    }
+    merge.style.pointerEvents = s
+    bubble.style.pointerEvents = s
+    quick.style.pointerEvents = s
+    insertion.style.pointerEvents = s
+    selection.style.pointerEvents = s
+    newarray.style.pointerEvents = s
+    size.style.pointerEvents = s
 }
 
 generateArray(arraySize)

@@ -49,11 +49,13 @@ label {
 
 .barsContainer {
     margin-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }
 
 .barsContainer > div {
+    transition: 0.1s all ease;
     background-color: khaki;
     margin: 1px;
 }
