@@ -112,12 +112,6 @@ button:hover {
     }
 }
 
-/* @media (max-width: 705px) {
-    .container {
-        grid-template-rows: 1fr 1fr 1fr 2fr;
-    }
-} */
-
 /* https://css-tricks.com/value-bubbles-for-range-inputs/ */
 input[type="range"] {
     -webkit-appearance: none;
