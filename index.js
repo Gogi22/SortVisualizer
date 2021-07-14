@@ -74,6 +74,7 @@ const swap = (bar1, bar2) => {
     [bar1.style.height, bar2.style.height] = [bar2.style.height, bar1.style.height];
 }
 
+// toggles buttons
 const disableButtons = show => {
     if(show){
        s = "none"

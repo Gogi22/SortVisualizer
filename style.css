@@ -60,25 +60,25 @@ label {
     margin: 1px;
 }
 
-.microBar {
-    width: 45px;
-}
-
 .barsContainer p {
     padding: 8px;
     text-align: center;
 }
 
+.microBar {
+    width: 45px;
+}
+
 .smallBar {
-    width: 25px;
+    width: 18px;
 }
 
 .mediumBar {
-    width: 15px;
+    width: 10px;
 }
 
 .largeBar {
-    width: 10px;
+    width: 6px;
 }
 
 .size {
@@ -106,16 +106,17 @@ button:hover {
     border: 1.5px solid rgb(83, 176, 204);
 }
 
-@media (max-width: 705px) {
+@media (max-width: 840px) {
+    html {
+        width: 840px;
+    }
+}
+
+/* @media (max-width: 705px) {
     .container {
         grid-template-rows: 1fr 1fr 1fr 2fr;
     }
-}
-@media (max-width: 418px) {
-    html {
-        width: 418px;
-    }
-}
+} */
 
 /* https://css-tricks.com/value-bubbles-for-range-inputs/ */
 input[type="range"] {
