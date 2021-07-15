@@ -46,7 +46,6 @@ const generateArray = (size=50) => {
         array.push(Math.ceil(Math.random() * 300)+10)
     }
     
-    
     for(let i=0; i<size; i++){
         const bar = document.createElement('div')
         bar.style.height = `${array[i]*2}px`
