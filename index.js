@@ -43,7 +43,7 @@ const generateArray = (size=50) => {
     array = []
     
     for(let i=0; i<size; i++){
-        array.push(Math.ceil(Math.random() * 300)+6)
+        array.push(Math.ceil(Math.random() * 300)+10)
     }
     
     
@@ -72,6 +72,11 @@ const generateArray = (size=50) => {
 
 const swap = (bar1, bar2) => {
     [bar1.style.height, bar2.style.height] = [bar2.style.height, bar1.style.height];
+    if(bar1.hasChildNodes()){
+        let temp = bar1.firstChild.textContent
+        bar1.firstChild.textContent = bar2.firstChild.textContent
+        bar2.firstChild.textContent = temp
+    }
 }
 
 // toggles buttons
