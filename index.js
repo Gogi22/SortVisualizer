@@ -97,6 +97,7 @@ const disableButtons = show => {
     selection.style.pointerEvents = s
     newarray.style.pointerEvents = s
     size.style.pointerEvents = s
+    halt = false
 }
 
 generateArray(arraySize)
