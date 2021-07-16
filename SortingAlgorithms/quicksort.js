@@ -60,6 +60,5 @@ const partition = async (start, end) => {
     
     swap(barArray[end], barArray[p_idx])
     barArray[end].style.backgroundColor = 'black'
-    // p.style.backgroundColor = 'khaki'
     return end
 }
