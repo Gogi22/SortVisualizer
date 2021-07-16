@@ -19,6 +19,8 @@ let arraySize = size.value
 let array = []
 let delay = 200
 
+let finishEarly = false //for quickSort
+
 speed.addEventListener('input', ()=>{
     // reverse the value
     delay = 501 - parseInt(speed.value)

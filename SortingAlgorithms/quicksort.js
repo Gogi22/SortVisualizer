@@ -1,17 +1,23 @@
 quick.addEventListener('click', async () => {
     disableButtons(true)
+    finishEarly = false
     await quickSort()
     disableButtons(false)
 })
 
 
 const quickSort = async (start = 0, end = barArray.length-1) => {
-    if(start < end){
+    if(start < end && !finishEarly){
 
         let part = await partition(start, end)
-
-        quickSort(start, part-1)
-        quickSort(part+1, end)
+        if (finishEarly) {
+            return
+        }
+        await quickSort(start, part-1)
+        if (finishEarly) {
+            return
+        }
+        await quickSort(part+1, end)
     }
 
 }
@@ -30,11 +36,19 @@ const partition = async (start, end) => {
 
         await new Promise(r => setTimeout(r, delay+20))
 
+        if(halt){
+                halt = false
+                generateArray(size.value)
+                finishEarly = true
+                return -1
+            }
+
         if(start < end){
             swap(barArray[start] , barArray[end])
         }
     }
     
     swap(barArray[end], barArray[p_idx])
+    barArray[end].style.backgroundColor = 'black'
     return end
 }
