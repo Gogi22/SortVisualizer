@@ -15,7 +15,6 @@ const insertionSort = async () => {
         while (j>=0 && height < parseInt(barArray[j].style.height)){
             
             if(halt){
-                halt = false
                 generateArray(size.value)
                 return
             }

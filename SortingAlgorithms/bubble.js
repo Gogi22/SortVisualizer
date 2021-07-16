@@ -11,7 +11,6 @@ const bubbleSort = async () => {
 
             // stop sorting if pressed reset
             if(halt){
-                halt = false
                 generateArray(size.value)
                 return
             }

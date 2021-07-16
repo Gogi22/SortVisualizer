@@ -19,6 +19,8 @@ let arraySize = size.value
 let array = []
 let delay = 200
 
+let finishEarly = false //for quickSort
+
 speed.addEventListener('input', ()=>{
     // reverse the value
     delay = 501 - parseInt(speed.value)
@@ -43,9 +45,8 @@ const generateArray = (size=50) => {
     array = []
     
     for(let i=0; i<size; i++){
-        array.push(Math.ceil(Math.random() * 300)+6)
+        array.push(Math.ceil(Math.random() * 300)+10)
     }
-    
     
     for(let i=0; i<size; i++){
         const bar = document.createElement('div')
@@ -72,6 +73,11 @@ const generateArray = (size=50) => {
 
 const swap = (bar1, bar2) => {
     [bar1.style.height, bar2.style.height] = [bar2.style.height, bar1.style.height];
+    if(bar1.hasChildNodes()){
+        let temp = bar1.firstChild.textContent
+        bar1.firstChild.textContent = bar2.firstChild.textContent
+        bar2.firstChild.textContent = temp
+    }
 }
 
 // toggles buttons
@@ -91,6 +97,7 @@ const disableButtons = show => {
     selection.style.pointerEvents = s
     newarray.style.pointerEvents = s
     size.style.pointerEvents = s
+    halt = false
 }
 
 generateArray(arraySize)
