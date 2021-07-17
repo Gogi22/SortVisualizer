@@ -1,8 +1,9 @@
 selection.addEventListener('click', async () => {
+    selection.classList.add('selectedButton')
     disableButtons(true)
     await selectionSort()
     disableButtons(false)
-    
+    selection.classList.remove('selectedButton')
 })
 
 

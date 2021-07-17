@@ -1,4 +1,5 @@
 quick.addEventListener('click', async () => {
+    quick.classList.add('selectedButton')
     disableButtons(true)
     await quickSort()
     
@@ -9,6 +10,7 @@ quick.addEventListener('click', async () => {
         }
     }
     disableButtons(false)
+    quick.classList.remove('selectedButton')
 })
 
 

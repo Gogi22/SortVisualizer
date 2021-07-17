@@ -109,6 +109,12 @@ button {
     cursor: pointer;
 }
 
+.selectedButton {
+    background: white;
+    color: rgb(94, 107, 109);
+    border: 1.5px solid rgb(83, 176, 204);
+}
+
 button:hover {
     background: white;
     color: rgb(94, 107, 109);

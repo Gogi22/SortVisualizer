@@ -1,8 +1,10 @@
 bubble.addEventListener('click', async () => {
+    bubble.classList.add('selectedButton')
     disableButtons(true)
     await bubbleSort()
     console.log('bubble')
     disableButtons(false)
+    bubble.classList.remove('selectedButton')
     
 })
 

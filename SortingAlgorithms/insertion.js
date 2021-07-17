@@ -1,7 +1,9 @@
 insertion.addEventListener('click', async () => {
+    insertion.classList.add('selectedButton')
     disableButtons(true)
     await insertionSort()
     disableButtons(false)
+    insertion.classList.remove('selectedButton')
     
 })
 

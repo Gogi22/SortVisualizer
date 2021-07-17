@@ -1,7 +1,9 @@
 merge.addEventListener('click', async () => {
+    merge.classList.add('selectedButton')
     disableButtons(true)
     await mergeSort()
     disableButtons(false)
+    merge.classList.remove('selectedButton')
     
 })
 

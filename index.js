@@ -81,7 +81,6 @@ const generateArray = (reverse, size) => {
         bar.style.backgroundColor = defaultColor
         bars.appendChild(bar)
     }
-    
 }
 
 const swap = (bar1, bar2) => {
