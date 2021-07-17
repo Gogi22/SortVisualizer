@@ -24,8 +24,8 @@ const mergeSort = async (left = 0, right = barArray.length-1) => {
        
         while(left <= mid && left2 <= right){
 
-            barArray[left].style.backgroundColor = 'red'
-            barArray[left2].style.backgroundColor = 'red'
+            barArray[left].style.backgroundColor = selectedColor
+            barArray[left2].style.backgroundColor = selectedColor
             
             await new Promise(r => setTimeout(r, delay+10))
             
@@ -62,7 +62,7 @@ const mergeSort = async (left = 0, right = barArray.length-1) => {
 
         // color whole section
         for(let i = templ; i<=tempr; i++){
-            barArray[i].style.backgroundColor = 'black'
+            barArray[i].style.backgroundColor = sortedColor
         }
     }
 }

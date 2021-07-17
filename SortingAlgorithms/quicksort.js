@@ -5,7 +5,7 @@ quick.addEventListener('click', async () => {
     // if function wasn't halted color it
     if (!halt){
         for(let i = 0; i < barArray.length; i++){
-            barArray[i].style.backgroundColor = 'black'
+            barArray[i].style.backgroundColor = sortedColor
         }
     }
     disableButtons(false)
@@ -41,8 +41,8 @@ const partition = async (start, end) => {
         }
         
         if(start < end){
-            barArray[start].style.backgroundColor = 'red'
-            barArray[end].style.backgroundColor = 'red'
+            barArray[start].style.backgroundColor = selectedColor
+            barArray[end].style.backgroundColor = selectedColor
 
             await new Promise(r => setTimeout(r, delay+20))
             if(halt){
@@ -50,12 +50,12 @@ const partition = async (start, end) => {
                 return -1
             }
             swap(barArray[start] , barArray[end])
-            barArray[start].style.backgroundColor = 'khaki'
-            barArray[end].style.backgroundColor = 'khaki'
+            barArray[start].style.backgroundColor = defaultColor
+            barArray[end].style.backgroundColor = defaultColor
         }
     }
 
     swap(barArray[end], barArray[p_idx])
-    barArray[end].style.backgroundColor = 'black'
+    barArray[end].style.backgroundColor = sortedColor
     return end
 }

@@ -14,8 +14,8 @@ const bubbleSort = async () => {
             if(halt) return
 
             // select
-            barArray[j].style.backgroundColor='red'
-            barArray[j+1].style.backgroundColor='red'
+            barArray[j].style.backgroundColor= selectedColor
+            barArray[j+1].style.backgroundColor= selectedColor
 
             if(parseInt(barArray[j].style.height) > parseInt(barArray[j+1].style.height)){
                 await new Promise(r => setTimeout(r, delay))
@@ -23,11 +23,11 @@ const bubbleSort = async () => {
             }
 
             // unselect
-            barArray[j].style.backgroundColor='khaki'
-            barArray[j+1].style.backgroundColor='khaki'
+            barArray[j].style.backgroundColor= defaultColor
+            barArray[j+1].style.backgroundColor= defaultColor
         }
 
         // sorted
-        barArray[barArray.length-i-1].style.backgroundColor='black'
+        barArray[barArray.length-i-1].style.backgroundColor= sortedColor
     }
 }

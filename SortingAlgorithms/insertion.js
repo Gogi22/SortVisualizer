@@ -14,21 +14,21 @@ const insertionSort = async () => {
         let j = i-1
         while (j>=0 && height < parseInt(barArray[j].style.height)){
             
-            barArray[j+1].style.backgroundColor = 'red'
-            barArray[j].style.backgroundColor = 'red'
+            barArray[j+1].style.backgroundColor = selectedColor
+            barArray[j].style.backgroundColor = selectedColor
             
             await new Promise(r => setTimeout(r, delay+20))
             
             if(halt) return
             swap(barArray[j+1], barArray[j])
 
-            barArray[j+1].style.backgroundColor = 'khaki'
-            barArray[j].style.backgroundColor = 'khaki'
+            barArray[j+1].style.backgroundColor = defaultColor
+            barArray[j].style.backgroundColor = defaultColor
             
             j -= 1
         }
         for(let j = i; j >= 0; j--){
-            barArray[j].style.backgroundColor = 'black'
+            barArray[j].style.backgroundColor = sortedColor
         }
     }
 }

@@ -13,6 +13,12 @@ const selection = document.querySelector('.selection')
 
 const barArray = bars.childNodes;
 
+
+const defaultColor = 'rgb(173,216,230)'
+const selectedColor = 'rgb(204, 67, 172)'
+const sortedColor =  'rgb(46, 40, 43)'
+
+
 let arraySize = size.value
 let array = []
 let delay = 200
@@ -72,6 +78,7 @@ const generateArray = (reverse, size) => {
             p.textContent = array[i]
             bar.appendChild(p)
         }
+        bar.style.backgroundColor = defaultColor
         bars.appendChild(bar)
     }
     
