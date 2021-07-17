@@ -19,7 +19,7 @@ let arraySize = size.value
 let array = []
 let delay = 200
 
-let finishEarly = false //for quickSort
+let haltRecursion = false //for quickSort
 
 speed.addEventListener('input', ()=>{
     // reverse the value
@@ -98,6 +98,7 @@ const disableButtons = show => {
     newarray.style.pointerEvents = s
     size.style.pointerEvents = s
     halt = false
+    haltRecursion = false
 }
 
 generateArray(arraySize)

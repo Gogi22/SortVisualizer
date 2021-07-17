@@ -7,13 +7,19 @@ merge.addEventListener('click', async () => {
 
 
 const mergeSort = async (left = 0, right = barArray.length-1) => {
-    if (left < right) {
+    if (left < right && !haltRecursion) {
 
         // divide
         let mid = left + Math.floor((right - left) / 2)
 
         await mergeSort(left, mid)
+        if (haltRecursion) {
+            return
+        }
         await mergeSort(mid+1, right)
+        if (haltRecursion) {
+            return
+        }
 
         // merge
         let left2 = mid + 1 
@@ -28,6 +34,12 @@ const mergeSort = async (left = 0, right = barArray.length-1) => {
             barArray[left].style.backgroundColor = 'red'
             barArray[left2].style.backgroundColor = 'red'
             
+            if(halt){
+                generateArray(size.value)
+                haltRecursion = true
+                return
+            }
+
             await new Promise(r => setTimeout(r, delay+10))
             if(parseInt(barArray[left].style.height) <= parseInt(barArray[left2].style.height)){
                 left += 1
@@ -37,6 +49,11 @@ const mergeSort = async (left = 0, right = barArray.length-1) => {
                 let index = left2
                 
                 while (index != left){
+                    if(halt){
+                        generateArray(size.value)
+                        haltRecursion = true
+                        return -1
+                    }
                     swap(barArray[index], barArray[index - 1])
                     index -= 1
                 }
@@ -49,6 +66,8 @@ const mergeSort = async (left = 0, right = barArray.length-1) => {
             }
 
         }
+
+        // color whole section
         for(let i = templ; i<=tempr; i++){
             barArray[i].style.backgroundColor = 'black'
         }

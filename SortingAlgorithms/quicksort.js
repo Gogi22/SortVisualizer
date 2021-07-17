@@ -1,6 +1,5 @@
 quick.addEventListener('click', async () => {
     disableButtons(true)
-    finishEarly = false
     await quickSort()
     // if function wasn't halted color it
     if (!halt){
@@ -13,14 +12,14 @@ quick.addEventListener('click', async () => {
 
 
 const quickSort = async (start = 0, end = barArray.length-1) => {
-    if(start < end && !finishEarly){
+    if(start < end && !haltRecursion){
 
         let part = await partition(start, end)
-        if (finishEarly) {
+        if (haltRecursion) {
             return
         }
         await quickSort(start, part-1)
-        if (finishEarly) {
+        if (haltRecursion) {
             return
         }
         await quickSort(part+1, end)
@@ -42,7 +41,7 @@ const partition = async (start, end) => {
         
         if(halt){
             generateArray(size.value)
-            finishEarly = true
+            haltRecursion = true
             return -1
         }
         
