@@ -13,13 +13,10 @@ const selectionSort = async () => {
         for(let j = i+1; j<barArray.length; j++){
 
             // stop sorting if pressed reset
-            if(halt){
-                generateArray(size.value)
-                return
-            }
-            
             barArray[j].style.backgroundColor = 'red'
             await new Promise(r => setTimeout(r, delay-20))
+            
+            if(halt)return
             
             if(parseInt(barArray[min_idx].style.height) > parseInt(barArray[j].style.height)){
                 barArray[min_idx].style.backgroundColor = 'khaki'

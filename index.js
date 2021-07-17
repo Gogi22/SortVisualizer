@@ -1,4 +1,3 @@
-const reset = document.querySelector('.reset')
 const newarrayRandom = document.querySelector('.newarrayRandom')
 const newarrayReversed = document.querySelector('.newarrayReversed')
 const bars = document.querySelector('.barsContainer')
@@ -13,8 +12,6 @@ const insertion = document.querySelector('.insertion')
 const selection = document.querySelector('.selection')
 
 const barArray = bars.childNodes;
-
-reset.style.pointerEvents = "none";
 
 let arraySize = size.value
 let array = []
@@ -31,18 +28,18 @@ size.addEventListener('input', () =>{
     generateArray(false, parseInt(size.value))
 })
 
+halt=false
+
 newarrayRandom.addEventListener('click', () =>{
+    halt = true
     generateArray(false, parseInt(size.value))
 })
 
 newarrayReversed.addEventListener('click', () =>{
+    halt = true
     generateArray(true, parseInt(size.value))
 })
 
-halt=false
-reset.addEventListener('click', () => {
-    halt = true
-})
 
 const generateArray = (reverse, size) => {
     bars.innerHTML = ''
@@ -91,20 +88,12 @@ const swap = (bar1, bar2) => {
 
 // toggles buttons
 const disableButtons = show => {
-    if(show){
-       s = "none"
-       reset.style.pointerEvents = "auto"
-    }
-    else{
-        s = "auto"
-        reset.style.pointerEvents = "none"
-    }
+    s = show ?  "none" : "auto"
     merge.style.pointerEvents = s
     bubble.style.pointerEvents = s
     quick.style.pointerEvents = s
     insertion.style.pointerEvents = s
     selection.style.pointerEvents = s
-    newarrayRandom.style.pointerEvents = s
     size.style.pointerEvents = s
     halt = false    
     haltRecursion = false

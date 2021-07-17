@@ -1,6 +1,7 @@
 bubble.addEventListener('click', async () => {
     disableButtons(true)
     await bubbleSort()
+    console.log('bubble')
     disableButtons(false)
     
 })
@@ -10,10 +11,7 @@ const bubbleSort = async () => {
         for(let j=0; j<barArray.length-i-1; j++){
 
             // stop sorting if pressed reset
-            if(halt){
-                generateArray(size.value)
-                return
-            }
+            if(halt) return
 
             // select
             barArray[j].style.backgroundColor='red'
