@@ -1,5 +1,6 @@
 const reset = document.querySelector('.reset')
-const newarray = document.querySelector('.newarray')
+const newarrayRandom = document.querySelector('.newarrayRandom')
+const newarrayReversed = document.querySelector('.newarrayReversed')
 const bars = document.querySelector('.barsContainer')
 
 const size = document.querySelector('.size')
@@ -27,11 +28,15 @@ speed.addEventListener('input', ()=>{
 })
 
 size.addEventListener('input', () =>{
-    generateArray(parseInt(size.value))
+    generateArray(false, parseInt(size.value))
 })
 
-newarray.addEventListener('click', () =>{
-    generateArray(parseInt(size.value))
+newarrayRandom.addEventListener('click', () =>{
+    generateArray(false, parseInt(size.value))
+})
+
+newarrayReversed.addEventListener('click', () =>{
+    generateArray(true, parseInt(size.value))
 })
 
 halt=false
@@ -39,13 +44,17 @@ reset.addEventListener('click', () => {
     halt = true
 })
 
-const generateArray = (size=50) => {
+const generateArray = (reverse, size) => {
     bars.innerHTML = ''
     
     array = []
     
     for(let i=0; i<size; i++){
         array.push(Math.ceil(Math.random() * 300)+10)
+    }
+    
+    if(reverse){
+        array.sort(function(a, b){return b - a})
     }
     
     for(let i=0; i<size; i++){
@@ -95,13 +104,13 @@ const disableButtons = show => {
     quick.style.pointerEvents = s
     insertion.style.pointerEvents = s
     selection.style.pointerEvents = s
-    newarray.style.pointerEvents = s
+    newarrayRandom.style.pointerEvents = s
     size.style.pointerEvents = s
-    halt = false
+    halt = false    
     haltRecursion = false
 }
 
-generateArray(arraySize)
+generateArray(false, arraySize)
 
 
 
