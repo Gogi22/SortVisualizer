@@ -96,10 +96,20 @@ const swap = (bar1, bar2) => {
 const disableButtons = show => {
     s = show ?  "none" : "auto"
     merge.style.pointerEvents = s
+    merge.disabled = show
+
     bubble.style.pointerEvents = s
+    bubble.disabled = show
+
     quick.style.pointerEvents = s
+    quick.disabled = show
+
     insertion.style.pointerEvents = s
+    insertion.disabled = show
+
     selection.style.pointerEvents = s
+    selection.disabled = show
+
     size.style.pointerEvents = s
     halt = false    
     haltRecursion = false
