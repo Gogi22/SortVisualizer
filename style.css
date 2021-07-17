@@ -31,7 +31,6 @@ body {
 
 label {
     margin: 0 12px;
-    padding-top: 10px;
     font-size: 1.2rem;
     font-weight: 550;
     color: rgba(46, 40, 43, 0.733);
@@ -41,6 +40,7 @@ label {
     grid-area: options;
     display: flex;
     justify-items: center !important;
+    align-items: center;
 }
 
 .main-row {
